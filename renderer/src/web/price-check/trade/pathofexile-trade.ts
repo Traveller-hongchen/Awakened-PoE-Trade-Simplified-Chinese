@@ -81,6 +81,18 @@ const INFLUENCE_PSEUDO_TEXT = {
 interface FilterBoolean { option?: 'true' | 'false' }
 interface FilterRange { min?: number, max?: number }
 
+interface SaleType {
+    /**
+     * any: 任何
+     * null: 交易精确一口价
+     * auto_buyout: 交易一口价
+     * priced: 交易报盘或固定价
+     * priced_with_info: 备注标价
+     * unpriced: 无定价
+     */
+    option?: "any" | "auto_buyout" | "priced" | "priced_with_info" | "unpriced"
+}
+
 interface TradeRequest { /* eslint-disable camelcase */
   query: {
     status: { option: 'online' | 'onlineleague' | 'any' }
@@ -184,6 +196,7 @@ interface TradeRequest { /* eslint-disable camelcase */
           collapse?: FilterBoolean
           indexed?: { option?: string }
           price?: FilterRange | { option?: string }
+          sale_type?: SaleType
         }
       }
     }
@@ -254,7 +267,15 @@ export function createTradeRequest (filters: ItemFilters, stats: StatFilter[], i
       stats: [
         { type: 'and', filters: [] }
       ],
-      filters: {}
+      filters: {
+        trade_filters: {
+          filters: {
+            sale_type: {
+              option: 'any'
+            }
+          }
+        }
+      }
     },
     sort: {
       price: 'asc'
