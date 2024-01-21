@@ -78,9 +78,16 @@ export const usePoeninja = createGlobalState(() => {
           default:
             return
         }
-        const response = await Host.proxy(jsonurl, {
-          signal: downloadController.signal
-        })
+        let response
+        try {
+          response = await Host.proxy(jsonurl, {
+            signal: downloadController.signal
+          })
+        } catch (e) {
+          response = await Host.proxy(jsonurl.replace('pub-feb51ef2e03741399e6a3d2d09a07601.r2.dev', 'gitee.com/hhzxxx/exilence-next-tx-release/raw/master'), {
+            signal: downloadController.signal
+          })
+        }
         const compressedBuffer = Buffer.from(await response.text(), 'base64')
         const jsonBlob = pako.ungzip(compressedBuffer, { to: 'string' })
         PRICES_DB_CN = splitJsonBlob(jsonBlob) as PriceDatabaseCN

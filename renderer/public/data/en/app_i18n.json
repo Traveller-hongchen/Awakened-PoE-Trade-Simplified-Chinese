@@ -28,6 +28,7 @@
 
   "Blighted": "Blighted",
   "Blight-ravaged": "Blight-ravaged",
+  "Magic": "Magic",
   "Shaper": "Shaper",
   "Elder": "Elder",
   "Crusader": "Crusader",
@@ -223,6 +224,7 @@
     "reset_key": "Reset"
   },
   "stash_search": {
+    "enable_keys": "Keys",
     "name": "Stash search",
     "search_text": "search text or regex",
     "friendly_name": "friendly name"

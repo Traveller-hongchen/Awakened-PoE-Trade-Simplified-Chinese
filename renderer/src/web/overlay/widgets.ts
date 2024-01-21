@@ -74,6 +74,7 @@ export interface DelveGridWidget extends Widget {
 
 export interface StashSearchWidget extends Widget {
   anchor: Anchor
+  enableHotkeys: boolean
   entries: Array<{
     id: number
     name: string

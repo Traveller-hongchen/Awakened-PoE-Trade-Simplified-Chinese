@@ -150,12 +150,14 @@ const TRADE_BULK_WHISPER = {
   'en': /^Hi, I'd like to buy your (?<item>.+) for my (?<price>.+) in (?<league>.+)\.(?<message>.+)?$/,
   'ru': /^Здравствуйте, хочу купить у вас (?<item>.+) за (?<price>.+) в лиге (?<league>.+)\.(?<message>.+)?$/,
   'cmn-Hant': /^你好，我想用 (?<price>.+) 購買 (?<item>.+) in (?<league>.+)\.(?<message>.+)?$/,
-  'zh_CN': /^你好，我希望购买你的(?<item>.+)用于我的(?<price>.+)，在(?<league>.+)(?<message>.+)?$/
+  'zh_CN': /^你好，我希望购买你的(?<item>.+)用于我的(?<price>.+)，在(?<league>.+)(?<message>.+)?$/,
+  'ko': /^_FIX_ME_$/
 }
 
 const ENTER_AREA = {
   'en': /^(?<A_patch>.+?)You have entered (?<area>.+)\.$/,
   'ru': /^Здравствуйте, хочу купить у вас (?<item>.+) за (?<price>.+) в лиге (?<league>.+)\.(?<message>.+)?$/,
   'cmn-Hant': /^你好，我想用 (?<price>.+) 購買 (?<item>.+) in (?<league>.+)\.(?<message>.+)?$/,
-  'zh_CN': /^(?<A_patch>.+?)你已进入： (?<area>.+)。$/
+  'zh_CN': /^(?<A_patch>.+?)你已进入： (?<area>.+)。$/,
+  'ko': /^_FIX_ME_$/
 }

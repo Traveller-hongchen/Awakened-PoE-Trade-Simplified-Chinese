@@ -91,6 +91,7 @@ export function poeWebApi () {
     case 'zh_CN': return (realm === 'pc-tencent')
       ? 'poe.game.qq.com'
       : 'www.pathofexile.com'
+    case 'ko': return 'poe.game.daum.net'
   }
 }
 
@@ -113,8 +114,8 @@ export interface Config {
   logKeys: boolean
   accountName: string
   stashScroll: boolean
-  language: 'en' | 'ru' | 'cmn-Hant' | 'zh_CN'
-  realm: 'pc-ggg' | 'pc-garena' | 'pc-tencent'
+  language: 'en' | 'ru' | 'cmn-Hant' | 'zh_CN' | 'ko'
+  realm: 'pc-ggg' | 'pc-garena' | 'pc-tencent' | 'ko'
   widgets: widget.Widget[]
   fontSize: number
   showAttachNotification: boolean
@@ -527,6 +528,12 @@ function upgradeConfig (_config: Config): Config {
     priceCheck.rememberCurrency = false
   }
 
+  for (const widget of config.widgets) {
+    if (widget.wmType === 'stash-search') {
+      (widget as widget.StashSearchWidget).enableHotkeys ??= true
+    }
+  }
+
   return config as unknown as Config
 }
 
@@ -603,6 +610,8 @@ function getConfigForHost (): HostConfig {
   for (const widget of config.widgets) {
     if (widget.wmType === 'stash-search') {
       const stashSearch = widget as widget.StashSearchWidget
+      if (!stashSearch.enableHotkeys) continue
+
       for (const entry of stashSearch.entries) {
         if (entry.hotkey) {
           actions.push({
