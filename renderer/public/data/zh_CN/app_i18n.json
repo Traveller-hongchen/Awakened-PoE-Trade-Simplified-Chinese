@@ -60,6 +60,7 @@
 
   "Blighted": "菌潮",
   "Blight-ravaged": "菌潮丛生",
+  "Magic": "魔法",
   "Shaper": "塑界者",
   "Elder": "裂界者",
   "Crusader": "圣战者",
@@ -256,6 +257,7 @@
     "reset_key": "重置"
   },
   "stash_search": {
+    "enable_keys": "Keys",
     "name": "仓库页搜索",
     "search_text": "搜索文本或正则",
     "friendly_name": "易记名称"
