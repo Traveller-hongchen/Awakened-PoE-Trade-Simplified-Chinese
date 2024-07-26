@@ -5,8 +5,8 @@
       <p class="text-base">Awakened PoE Trade Simplified Chinese</p>
       <p class="">{{ t('app.version', [version]) }}</p>
       <div class="flex gap-2">
-        <a class="border-b" href="https://github.com/DonkiChen/Awakened-PoE-Trade-Simplified-Chinese/releases" target="_blank">{{ t('app.release_notes') }}</a>
-        <a class="border-b" href="https://github.com/DonkiChen/Awakened-PoE-Trade-Simplified-Chinese/issues" target="_blank">{{ t('app.report_bug') }}</a>
+        <a class="border-b" href="https://github.com/Traveller-hongchen/Awakened-PoE-Trade-Simplified-Chinese/releases" target="_blank">{{ t('app.release_notes') }}</a>
+        <a class="border-b" href="https://github.com/Traveller-hongchen/Awakened-PoE-Trade-Simplified-Chinese/issues" target="_blank">{{ t('app.report_bug') }}</a>
       </div>
     </div>
     <div class="border border-gray-600 rounded p-2 whitespace-nowrap min-w-min w-72">
@@ -39,7 +39,7 @@ function checkForUpdates () {
 }
 
 function openDownloadPage () {
-  window.open('https://github.com/DonkiChen/Awakened-PoE-Trade-Simplified-Chinese/releases')
+  window.open('https://github.com/Traveller-hongchen/Awakened-PoE-Trade-Simplified-Chinese/releases')
 }
 
 function quitAndInstall () {
