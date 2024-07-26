@@ -8,11 +8,11 @@
     "package": "electron-builder build"
   },
   "author": {
-    "name": "Alexander Drozdov and HongChen and DonkiChen"
+    "name": "Alexander Drozdov and HongChen"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/DonkiChen/Awakened-PoE-Trade-Simplified-Chinese.git"
+    "url": "https://github.com/Traveller-hongchen/Awakened-PoE-Trade-Simplified-Chinese.git"
   },
   "main": "dist/main.js",
   "dependencies": {
