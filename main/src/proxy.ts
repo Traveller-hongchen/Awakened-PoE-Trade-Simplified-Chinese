@@ -51,7 +51,8 @@ export class HttpProxy {
           Origin: 'https://poe.game.qq.com',
           Host: 'poe.game.qq.com',
           'X-Requested-With': 'XMLHttpRequest'
-        }
+        },
+        rejectUnauthorized: false
       } : {
         method: req.method,
         headers: {
@@ -59,7 +60,8 @@ export class HttpProxy {
           host: host,
           cookie: cookie,
           'user-agent': app.userAgentFallback
-        }
+        },
+        rejectUnauthorized: false
       }
       const proxyReq = https.request(
         'https://' + req.url.slice('/proxy/'.length),
