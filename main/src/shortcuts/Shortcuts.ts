@@ -154,7 +154,7 @@ export class Shortcuts {
           this.areaTracker.removeListeners()
           this.overlay.toggleActiveState()
         } else if (entry.action.type === 'paste-in-chat') {
-          typeInChat(entry.action.text, entry.action.send, this.clipboard)
+          typeInChat(entry.action.text, entry.action.send, entry.action.restoreLastChat, this.clipboard)
         } else if (entry.action.type === 'trigger-event') {
           this.server.sendEventTo('broadcast', {
             name: 'MAIN->CLIENT::widget-action',

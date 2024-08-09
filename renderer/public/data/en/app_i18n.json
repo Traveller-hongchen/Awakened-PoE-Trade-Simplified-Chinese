@@ -284,6 +284,7 @@
     "last_char_name": "Last character name",
     "chat_cmd_add": "Add command",
     "chat_cmd_send": "press Enter",
+    "chat_restore_last_chat": "restore last chat",
     "no_key": "Not Set",
     "clear_hotkey": "You can clear hotkey by pressing Backspace",
     "overlay" :"Overlay",

@@ -278,6 +278,7 @@
     "last_char_name": "마지막 캐릭터 이름",
     "chat_cmd_add": "명령어 추가",
     "chat_cmd_send": "Enter를 치세요",
+    "chat_restore_last_chat": "restore last chat",
     "no_key": "지정없음",
     "clear_hotkey": "백스페이스를 누르면 핫키가 초기화됩니다",
     "overlay": "오버레이",

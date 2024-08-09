@@ -13,7 +13,7 @@ const AUTO_CLEAR = [
   '/' // Command
 ]
 
-export function typeInChat (text: string, send: boolean, clipboard: HostClipboard) {
+export function typeInChat (text: string, send: boolean, restoreLastChat: boolean, clipboard: HostClipboard) {
   clipboard.restoreShortly((clipboard) => {
     const modifiers = process.platform === 'darwin' ? [Key.Meta] : [Key.Ctrl]
 
@@ -42,10 +42,12 @@ export function typeInChat (text: string, send: boolean, clipboard: HostClipboar
     if (send) {
       uIOhook.keyTap(Key.Enter)
       // restore the last chat
-      uIOhook.keyTap(Key.Enter)
-      uIOhook.keyTap(Key.ArrowUp)
-      uIOhook.keyTap(Key.ArrowUp)
-      uIOhook.keyTap(Key.Escape)
+      if (restoreLastChat) {
+        uIOhook.keyTap(Key.Enter)
+        uIOhook.keyTap(Key.ArrowUp)
+        uIOhook.keyTap(Key.ArrowUp)
+        uIOhook.keyTap(Key.Escape)
+      }
     }
   })
 }

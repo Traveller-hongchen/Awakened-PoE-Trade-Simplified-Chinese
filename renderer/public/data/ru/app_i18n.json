@@ -295,6 +295,7 @@
     "last_char_name": "Имя последнего персонажа",
     "chat_cmd_add": "Добавить команду",
     "chat_cmd_send": "нажимать Enter",
+    "chat_restore_last_chat": "restore last chat",
     "no_key": "Не назначено",
     "clear_hotkey": "Вы можете отключить сочетание, нажав клавишу Backspace",
     "overlay" :"Оверлей",
