@@ -111,6 +111,7 @@ export interface Config {
     text: string
     hotkey: string | null
     send: boolean
+    restoreLastChat: boolean
   }>
   clientLog: string | null
   gameConfig: string | null
@@ -127,7 +128,7 @@ export interface Config {
 }
 
 export const defaultConfig = (): Config => ({
-  configVersion: 16,
+  configVersion: 17,
   overlayKey: 'Shift + Space',
   overlayBackground: 'rgba(129, 139, 149, 0.15)',
   overlayBackgroundClose: true,
@@ -136,27 +137,33 @@ export const defaultConfig = (): Config => ({
   commands: [{
     text: '/hideout',
     hotkey: 'F5',
-    send: true
+    send: true,
+    restoreLastChat: true
   }, {
     text: '/exit',
     hotkey: 'F9',
-    send: true
+    send: true,
+    restoreLastChat: true
   }, {
     text: '@last ty',
     hotkey: null,
-    send: true
+    send: true,
+    restoreLastChat: true
   }, {
     text: '/invite @last',
     hotkey: null,
-    send: true
+    send: true,
+    restoreLastChat: true
   }, {
     text: '/tradewith @last',
     hotkey: null,
-    send: true
+    send: true,
+    restoreLastChat: true
   }, {
     text: '/hideout @last',
     hotkey: null,
-    send: true
+    send: true,
+    restoreLastChat: true
   }],
   clientLog: null,
   gameConfig: null,
@@ -563,6 +570,15 @@ function upgradeConfig (_config: Config): Config {
     }
   }
 
+  if (config.configVersion < 17) {
+    config.commands.forEach(command => {
+      if (command.restoreLastChat === undefined) {
+        command.restoreLastChat = true
+      }
+    })
+    config.configVersion = 17
+  }
+
   return config as unknown as Config
 }
 
@@ -632,7 +648,7 @@ function getConfigForHost (): HostConfig {
     if (command.hotkey) {
       actions.push({
         shortcut: command.hotkey,
-        action: { type: 'paste-in-chat', text: command.text, send: command.send }
+        action: { type: 'paste-in-chat', text: command.text, send: command.send, restoreLastChat: command.restoreLastChat }
       })
     }
   }

@@ -316,6 +316,7 @@
     "last_char_name": "最近角色名称",
     "chat_cmd_add": "增加命令",
     "chat_cmd_send": "按回车(Enter)",
+    "chat_restore_last_chat": "恢复最近一条发言(会导致多次输入回车)",
     "no_key": "未设置",
     "clear_hotkey": "你可以使用Backspace(回退键)来清除快捷键",
     "overlay" :"Overlay",

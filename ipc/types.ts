@@ -34,6 +34,7 @@ export interface ShortcutAction {
     type: 'paste-in-chat'
     text: string
     send: boolean
+    restoreLastChat: boolean
   } | {
     type: 'test-only'
   }
