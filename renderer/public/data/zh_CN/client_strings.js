@@ -57,7 +57,7 @@ export default {
   QUALITY_ANOMALOUS: /^异常 (.*)$/,
   QUALITY_DIVERGENT: /^分歧 (.*)$/,
   QUALITY_PHANTASMAL: /^魅影 (.*)$/,
-  AREA_LEVEL: '地区等级: ',
+  AREA_LEVEL: '区域等级: ',
   HEIST_WINGS_REVEALED: '发现的侧厅: ',
   HEIST_TARGET: '赏金目标：',
   HEIST_BLUEPRINT_ENCHANTS: '附魔军备',
